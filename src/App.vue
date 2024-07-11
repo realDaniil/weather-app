@@ -1,10 +1,28 @@
 <template>
+  <h1>Weather Cards</h1>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">{{ $t("common.home_page") }}</router-link>
+    <router-link to="/favorites">{{ $t("common.favorites_page") }}</router-link>
+    <select class="select" @change="changeLanguage($event.target.value)">
+      <option value="en">English</option>
+      <option value="uk">Українська</option>
+    </select>
   </nav>
-  <router-view/>
+
+  <router-view />
 </template>
+
+<script>
+import { setI18nLanguage } from "@/i18n/index";
+
+export default {
+  methods: {
+    changeLanguage(locale) {
+      setI18nLanguage(locale);
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -13,6 +31,19 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.select {
+  /* position: absolute; */
+}
+
+@media (max-width: 600px) {
+  #app {
+    padding: 10px;
+  }
 }
 
 nav {
@@ -22,6 +53,8 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
+  margin: 0 8px;
 }
 
 nav a.router-link-exact-active {

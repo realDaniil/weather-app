@@ -1,14 +1,10 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
+import { weathersModule } from "./weathersModule";
+import { favoritesModule } from "./favoritesModule";
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
-  }
-})
+    weathers: weathersModule,
+    favorites: favoritesModule,
+  },
+});
