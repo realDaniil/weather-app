@@ -13,6 +13,7 @@ const messages = {
       sure_delete: "Are you sure you want to delete the card?",
       back: "Back",
       remove: "Remove",
+      save_the_card: "Save the card and it will appear here",
     },
     weather: {
       clear_sky: "Clear sky",
@@ -73,7 +74,7 @@ const messages = {
   uk: {
     common: {
       home_page: "Головна",
-      favorites_page: "Сохраненное",
+      favorites_page: "Збережене",
       choose_day: "Виберіть день",
       choose_city: "Виберіть місто",
       enter_city_name: "Введіть назву міста",
@@ -81,6 +82,7 @@ const messages = {
       sure_delete: "Ви впевнені, що хочете видалити картку?",
       back: "Назад",
       remove: "Видалити",
+      save_the_card: "Збережіть картку, і вона з’явиться тут",
     },
     weather: {
       clear_sky: "Ясне небо",

@@ -51,6 +51,7 @@
         </CircleButton>
         <div v-show="weather" class="like-button">
           <CircleButton
+            :disabled="!isShowLikeButton && !isFavoritePage && !isFavoriteId"
             style="background: red"
             @click="toggleFavorite"
             :class="isFavoriteId ? 'pi pi-heart-fill' : 'pi pi-heart'"
@@ -108,6 +109,12 @@ export default {
       if (!this.weather) return false;
       const favoriteIds = this.store.state.favorites.favorites;
       return favoriteIds.some((item) => item.id === this.weather.id);
+    },
+    isShowLikeButton() {
+      return this.store.state.favorites.favorites.length < 5;
+    },
+    isFavoritePage() {
+      return this.$route.name === "favorites";
     },
   },
   mounted() {
@@ -222,4 +229,4 @@ p {
   text-align: left;
 }
 </style>
-//да 200 строк это много, не было времени для разбивки :) 
+//да 200 строк это много, не было времени для разбивки :)

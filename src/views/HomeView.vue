@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-bottom: 3rem;">
+  <div style="padding-bottom: 3rem">
     <CircleButton
       class="add-button"
       @click="addWeatherBlock"

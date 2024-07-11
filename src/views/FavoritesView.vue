@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div favorites></div>
+    <div v-show="!favorites.length">
+      <p>{{ $t("common.save_the_card") }}</p>
+    </div>
     <div v-for="favorite in favorites" :key="favorite.id">
       <WeatherBlock
         :isShowDeleteButton="isShowDeleteButton"
